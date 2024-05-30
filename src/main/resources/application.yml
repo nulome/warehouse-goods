@@ -1,0 +1,17 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  liquibase.change-log: classpath:/db/changelog/db.changelog-master.yaml
+  application.name: warehouse-goods
+  profiles.active: ${spring.profiles.active}
+
+logging.level.com.local.warehousegoods: trace
+
+app:
+  scheduling:
+    enabled: true
+    period: 3000 #ms
+    priceCreateInData: false
+    priceIncreasePercentage: 10.1
+    optimization: false

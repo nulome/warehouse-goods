@@ -1,17 +1,22 @@
 package com.local.warehousegoods.service;
 
-import com.local.warehousegoods.model.Product;
+import com.local.warehousegoods.model.dto.CreateProductRequestDto;
+import com.local.warehousegoods.model.dto.ProductRequestDto;
+import com.local.warehousegoods.model.dto.ProductResponseDto;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface ServiceLogic {
-    Product createProduct(Product product);
+    UUID createProduct(CreateProductRequestDto createProductDto);
 
-    Product updateProduct(Product product);
+    ProductResponseDto updateProduct(ProductRequestDto productRequestDto);
 
-    Product getProduct(Integer article);
+    ProductResponseDto getProduct(UUID uuid);
 
-    Product deleteProduct(Integer article);
+    UUID deleteProduct(UUID uuid);
 
-    List<Product> getProductAll();
+    Page<ProductResponseDto> getProductAll(PageRequest pageRequest);
 }

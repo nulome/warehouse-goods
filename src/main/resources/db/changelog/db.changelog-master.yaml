@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      # schema
+      file: db/changelog/changeset/xmlSchema.xml
+#  - include:
+#      file: db/changelog/schema.sql
+#       data
+#  - include:
+#      file: db/changelog/data.xml
